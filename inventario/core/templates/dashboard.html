@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Dashboard</h2>
+  <ul>
+    {% for item in items %}
+      <li><a href="{% url 'view_item' item.pk %}">{{ item.name }}</a></li>
+    {% empty %}
+      <p>Você ainda não adicionou nenhum item.</p>
+    {% endfor %}
+  </ul>
+{% endblock %}
